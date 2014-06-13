@@ -20,13 +20,21 @@
 <body>
   <div id="navbar">
     <nav>
-      <ul>
-        <li><a href=""></a></li>
-
-      </ul>
-
-
-    </nav>
+  <% if session[:user_id]%>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
+      <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  <% else %>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/user/new">Create Account</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+  <% end %>
+</nav>
   </div>
   <%= yield %>
 </body>
