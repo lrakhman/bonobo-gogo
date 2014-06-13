@@ -21,12 +21,14 @@
   <div id="navbar">
     <nav>
   <% if session[:user_id]%>
+    <% %>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
       <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
+
   <% else %>
 
   <div>
@@ -38,7 +40,7 @@
   </div>
 
   <div>
-  <form id="sign_up" method="post" action="/user">
+  <form id="sign_up" method="post" action="/users">
     <input name="username" type="text" placeholder="Please choose a username." value="<%= @user.username if @user%>"></input>
     <input name="password" type="text" placeholder="Please choose a password." ></input>
     <input type="submit" value="Sign-up"></input>
