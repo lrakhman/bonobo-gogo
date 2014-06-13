@@ -3,10 +3,10 @@ get '/' do
   erb :index
 end
 
-get 'logout' do
-
+get '/logout' do
+  erb :index
 end
 
-post 'login' do
+post '/login' do
 
 end

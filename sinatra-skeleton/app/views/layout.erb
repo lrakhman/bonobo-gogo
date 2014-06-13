@@ -20,13 +20,33 @@
 <body>
   <div id="navbar">
     <nav>
-      <ul>
-        <li><a href=""></a></li>
+  <% if session[:user_id]%>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
+      <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  <% else %>
 
-      </ul>
+  <div>
+  <form id="login" method="post" action="/login">
+    <input name="username" type="text" placeholder="Type in your username." value="<%= @user.username if @user%>"></input>
+    <input name="password" type="password" placeholder="Type in your password." ></input>
+    <input type="submit" value="Login"></input>
+  </form>
+  </div>
 
+  <div>
+  <form id="sign_up" method="post" action="/user">
+    <input name="username" type="text" placeholder="Please choose a username." value="<%= @user.username if @user%>"></input>
+    <input name="password" type="text" placeholder="Please choose a password." ></input>
+    <input type="submit" value="Sign-up"></input>
+  </form>
+  </div>
 
-    </nav>
+  <% end %>
+</nav>
   </div>
   <%= yield %>
 </body>
