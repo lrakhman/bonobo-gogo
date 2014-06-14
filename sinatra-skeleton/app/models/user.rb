@@ -20,4 +20,3 @@ include BCrypt
   end
 
 end
-

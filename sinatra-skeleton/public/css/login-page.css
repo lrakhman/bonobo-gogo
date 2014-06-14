@@ -8,6 +8,7 @@
 
 body {
   background-image: url('bonobo-wallpapers-3.jpg');
+  background-size: cover;
 }
 
 header {
@@ -15,6 +16,9 @@ header {
   text-align: center;
   opacity: 0.8;
   font-family: 'Cinzel', serif;
+  width: 100%;
+ /* margin-left: 0;
+  margin-right: 0;*/
 }
 
 header h1 {
