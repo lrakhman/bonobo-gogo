@@ -10,7 +10,7 @@
   <!--
     application.css is where you put your styles
   -->
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/logout.css">
   <link href='http://fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -19,16 +19,8 @@
   <title></title>
 </head>
 <body>
-  <% if session[:user_id]%>
   <div>
-  <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
-      <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
+  <h1>K, bye.</h1>
   </div>
-  <%end%>
-    <%= yield %>
 </body>
 </html>
