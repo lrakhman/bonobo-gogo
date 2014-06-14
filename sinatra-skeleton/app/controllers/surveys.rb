@@ -1,12 +1,9 @@
 
-<<<<<<< HEAD
 get '/surveys/:survey_response_survey_id/stats' do
 
 
 	erb :stats
-=======
-get '/surveys/:survey_id/stats' do
->>>>>>> master
+
 
 end
 
