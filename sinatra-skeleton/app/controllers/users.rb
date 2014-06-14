@@ -1,5 +1,11 @@
 get '/users/:user_id/surveys/new' do
-
+  if session[:user_id]
+    erb :new_survey
+        #puts params[:json_form]
+  else
+    redirect "/"
+  end
+   redirect "/"
 end
 
 get '/users/:user_id' do
@@ -17,6 +23,3 @@ post '/users' do
   end
 end
 
-post '/users/:user_id/surveys/new' do
-
-end

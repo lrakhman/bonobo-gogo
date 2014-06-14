@@ -1,1 +1,35 @@
-new_survey.erb
+<script src="/js/new_survey.js"></script>
+<div id="new_survey">
+  <div id="survey_title">
+  </div>
+  <div id="questions_div">
+    <ul id= "questions_list"><!--
+      <li id= "question_1">
+        what's your favorite monkey?
+        <ul id= "choice_list">
+          <li id="choice_1">
+            bonobos
+          </li>
+        </ul>
+      </li>  -->
+    </ul>
+  </div>
+  <div id="add_question_div">
+    <form id="add_question_form">
+      <input type="text" placeholder="create your question">
+      <input type="submit" value="submit question">
+    </form>
+    <form id="add_choice_form">
+      <input type="text" placeholder="create a choice">
+      <input type="submit" value="submit choice">
+      <button id="add_another_question" value="Add Another Question">Add Next Question</button>
+    </form>
+  </div>
+  <div id="finished_button">
+    <form action="/users/<%=session[:user_id]%>/surveys/new" method="post" id="finished_form">
+      <input id="json_object" name="json_form" type="hidden" value="">
+      <input type="submit" value="Survey Complete">
+    </form>
+  </div>
+</div>
+<div id="padding_div" height="1000"></div>
