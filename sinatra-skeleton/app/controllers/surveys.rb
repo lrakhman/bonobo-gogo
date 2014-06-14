@@ -3,11 +3,10 @@ get '/surveys/:survey_id/stats' do
 end
 
 get '/surveys/:survey_id' do
-	session[:user_id] = 1
 	if session[:user_id]
 		@survey = Survey.find(params[:survey_id])
 		erb :survey
-	else 
+	else
 		redirect '/'
 	end
 
@@ -20,7 +19,7 @@ post '/surveys/:survey_id' do
 
 	survey = Survey.find(params[:survey_id])
 	survey.questions.each do |question|
-		QuestionResponse.create(choice_id: params[question.id].to_i,survey_response_id: survey_taken.id) 
+		QuestionResponse.create(choice_id: params[question.id].to_i,survey_response_id: survey_taken.id)
 	end
 
 	redirect "/users/#{session[:user_id]}"

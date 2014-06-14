@@ -1,8 +1,11 @@
-<%@surveys.each do |survey|%>
-	<div class="survey">
-		<h2><a href= <%="/surveys/#{survey.id}"%> ><%=survey.title%></a></h2>
-			<p><%=survey.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y %I:%M%p")%></p>
-			<p><%=survey.description%><p>
-	</div>
+<%if session[:user_id]%>
+  <%@surveys.each do |survey|%>
+
+  		<h2><a href= <%="/surveys/#{survey.id}"%> ><%=survey.title%></a></h2>
+  			<p><%=survey.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y %I:%M%p")%></p>
+  			<p><%=survey.description%><p>
+
+  <%end%>
+
 <%end%>
 
