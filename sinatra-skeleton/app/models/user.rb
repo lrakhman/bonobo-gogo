@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :survey_responses
-  has_many :surveys, foreign_key: :survey_creator_id
+  has_many :survey_responses, dependent: :destroy
+  has_many :surveys, dependent: :destroy, foreign_key: :survey_creator_id
 
 include BCrypt
 
