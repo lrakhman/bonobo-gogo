@@ -4,6 +4,7 @@ get '/surveys/:survey_id/stats' do
  erb :stats
 end
 
+
 get '/surveys/:survey_id' do
 	if session[:user_id]
 		@survey = Survey.find(params[:survey_id])
@@ -23,6 +24,12 @@ post '/surveys/:survey_id' do
 		QuestionResponse.create(choice_id: params[question.id.to_s].to_i, survey_response_id: survey_taken.id)
 	end
 	redirect "/users/#{session[:user_id]}"
+end
+
+put '/suveys/:survey_id/edit' do
+  @survey = Survey.find(params[:survey_id])
+  @survey.update_attributes(params[:survey_id])
+  redirect '/'
 end
 
 delete "/surveys/:survey_id" do
