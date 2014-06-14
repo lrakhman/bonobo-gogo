@@ -1,17 +1,14 @@
 <script src="/js/new_survey.js"></script>
 <div id="new_survey">
   <div id="survey_title">
+    <form id="survey_title_form">
+      <input id="title_text" type="text" placeholder="Survey Title">
+      <input id="description_text" type="text" placeholder="Survey Description">
+    </form>
   </div>
   <div id="questions_div">
-    <ul id= "questions_list"><!--
-      <li id= "question_1">
-        what's your favorite monkey?
-        <ul id= "choice_list">
-          <li id="choice_1">
-            bonobos
-          </li>
-        </ul>
-      </li>  -->
+    <ul id= "questions_list">
+
     </ul>
   </div>
   <div id="add_question_div">
@@ -28,6 +25,8 @@
   <div id="finished_button">
     <form action="/users/<%=session[:user_id]%>/surveys/new" method="post" id="finished_form">
       <input id="json_object" name="json_form" type="hidden" value="">
+      <input id="title" name="title" type="hidden" value="">
+      <input id="description" name="description" type="hidden" value="">
       <input type="submit" value="Survey Complete">
     </form>
   </div>
