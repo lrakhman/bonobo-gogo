@@ -3,23 +3,30 @@
 
 <h2>Surveys Taken:</h2>
 	<ol>
-		<%@user.survey_responses.each do |survey_response|%>
-			<% id = survey_response.survey_id%>
-			<% survey = Survey.find(id)%>
-			<li><a href="/surveys/<%=survey.id%>"><%= survey.title%></a></li>
+			<%if @user.survey_responses.any? %>
+			<%@user.survey_responses.each do |survey_response|%>
+				<li><a href="/surveys/<%=survey_response.survey.id%>"><%= survey_response.survey.title%></a></li>
+			<%end%>
 		<%end%>
+
 
 	</ol>
 
 
 
-
 <h2>Surveys Created:</h2>
 
-	<ol>
-		<%Survey.all.where(survey_creator_id: session[:user_id]).each do |a_survey|%>
-		<li><%=a_survey.title%></li>
+	<ol class="created_surveys" >
+		<%if Survey.all.where(survey_creator_id: session[:user_id]).any? %>
+			<%Survey.all.where(survey_creator_id: session[:user_id]).each do |a_survey|%>
+			<li>
+				<%=a_survey.title%>
+				<a class="edit" href="/surveys/<%=a_survey.id%>">Edit</a>
+				<a class="delete" href="/surveys/<%=a_survey.id%>">Delete</a> 
+			</li>
+			<%end%>
 		<%end%>
+
 	</ol>
 
 
