@@ -1,0 +1,17 @@
+
+<% height_multiple = 40 %>
+
+<% @survey.questions.each do |question| %>
+  <h2><%= question.text %></h2>
+  <div class="graph">
+    <% question.choices.each do |choice| %>
+      <div style="height: <%= choice.question_responses.length * height_multiple %>px;" class="bar"></div>
+    <% end %>
+    <br>
+    <% question.choices.each do |choice| %>
+          <div class="label"><%=choice.text%></div>
+    <% end %>
+  </div>
+<%end%>
+
+

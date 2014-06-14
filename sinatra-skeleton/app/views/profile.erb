@@ -6,10 +6,12 @@
 
 <h2>Surveys Taken:</h2>
 	<ol>
+
 			<%if @user.survey_responses.any? %>
 			<%@user.survey_responses.each do |survey_response|%>
 				<li><a href="/surveys/<%=survey_response.survey.id%>"><%= survey_response.survey.title%></a></li>
 			<%end%>
+
 		<%end%>
 
 	</ol>
@@ -28,6 +30,7 @@
 				<a class="delete" href="/surveys/<%=a_survey.id%>">Delete</a>
 			</li>
 			<%end%>
+
 		<%end%>
 
 	</ol>
