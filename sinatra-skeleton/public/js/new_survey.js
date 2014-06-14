@@ -18,8 +18,6 @@ $(document).ready(function() {
      $('html, body').animate({scrollTop: $(document).height()}, 'slow');
      $("#json_object").val(JSON.stringify(questions));
      console.log($("#json_object").val());
-    // choice_form = document.createElement("form");
-    // document.getElementById('').appendChild(choice_form);
   });
 
 

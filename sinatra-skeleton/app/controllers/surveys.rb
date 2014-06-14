@@ -1,12 +1,12 @@
 
-get 'surveys/:survey_id/stats' do
+get '/surveys/:survey_id/stats' do
 
 end
 
-get 'surveys/:survey_id' do
+get '/surveys/:survey_id' do
   if session[:user_id]
     @survey = Survey.find(params[:survey_id])
-    erb :surveys
+    erb :survey
   else
     redirect "/"
   end
