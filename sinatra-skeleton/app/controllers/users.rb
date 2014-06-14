@@ -51,10 +51,10 @@ end
 post '/users/:user_id' do
 # params['uploaded_photo'][:filename]
 
- # File.open("uploads/" + "#{params[:user_id]}" do |f|
- #    f.write(params['uploaded_photo'][:tempfile].read)
- #    puts(params['uploaded_photo'])
- #  end
+ File.open("public/images/" + params[:user_id] + ".jpg", "w") do |f|
+    f.write(params['uploaded_photo'][:tempfile].read)
+    puts(params['uploaded_photo'])
+  end
 
- #redirect "/users/#{params[:user_id]}"
+ redirect "/users/#{params[:user_id]}"
 end
