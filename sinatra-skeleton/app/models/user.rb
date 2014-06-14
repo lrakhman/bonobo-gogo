@@ -20,3 +20,7 @@ include BCrypt
   end
 
 end
+<<<<<<< HEAD
+
+=======
+>>>>>>> ff20be1a0c927d27c0dee5f1468a883aa91bb144
