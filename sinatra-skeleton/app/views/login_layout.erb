@@ -23,17 +23,6 @@
 
   <div id="navbar">
     <nav>
-  <% if session[:user_id]%>
-
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
-      <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-
-  <% else %>
-
   <div>
   <form id="first" class="dark-matter" method="post" action="/login">
     <fieldset>
@@ -52,8 +41,6 @@
     </fieldset>
   </form>
   </div>
-
-  <% end %>
 </nav>
   </div>
 

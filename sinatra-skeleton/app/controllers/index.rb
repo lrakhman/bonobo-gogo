@@ -1,6 +1,10 @@
 get '/' do
   @surveys = Survey.all
-  erb :index, layout: :login_layout
+  if session[:user_id]
+    erb :index
+  else
+    erb :index, layout: :login_layout
+  end
 end
 
 get '/logout' do
@@ -9,15 +13,15 @@ get '/logout' do
 end
 
 post '/login' do
- @user = User.authenticate(params[:username], params[:password])
+ user = User.authenticate(params[:username], params[:password])
  logger.info "wheretf am I"
- logger.info @user
-  if @user
-    session[:user_id] = @user.id
+ logger.info user
+  if user
+    session[:user_id] = user.id
     logger.info "I'm here right now."
     redirect '/'
   else
-    @user = User.new(username: params[:username])
-    erb :index
+    redirect '/'
   end
 end
+
