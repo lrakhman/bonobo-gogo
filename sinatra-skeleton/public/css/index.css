@@ -21,6 +21,10 @@ div nav{
 }
 
 
+#nav_ul{
+  text-align: right;
+}
+
 #logo{
   width:300px;
   margin-top: 6px;

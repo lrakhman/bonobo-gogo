@@ -15,11 +15,7 @@
 		<%end%>
 
 	</ol>
-
-
-
 <h2>Surveys Created:</h2>
-
 
 	<ol class="created_surveys" >
 		<%if Survey.all.where(survey_creator_id: session[:user_id]).any? %>
