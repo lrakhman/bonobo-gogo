@@ -21,3 +21,12 @@
 		<li><%=a_survey.title%></li>
 		<%end%>
 	</ol>
+
+
+<h1> Upload a profile pic! </h1>
+ <form method="post" action="/users/<%=session[:user_id]%>" enctype='multipart/form-data')>
+   <input type='file' name='uploaded_photo')>
+   <br>
+   <input type='submit' value='Upload!'>
+   <br>
+ </form>
