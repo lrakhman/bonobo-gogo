@@ -26,7 +26,7 @@ post '/users/:user_id/surveys/new' do
   if session[:user_id]
     questions = JSON.parse(params[:json_form])
 
-    survey = Survey.create(title: "test title" , description: "test descriptoin")
+    survey = Survey.create(title: params[:title] , description: params[:description])
     questions.each do |question|
       question_obj = Question.create(survey_id: survey.id, text: question['text'])
       #puts question["choices"].length
