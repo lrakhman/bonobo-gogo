@@ -1,5 +1,5 @@
 
-get 'surveys/:survey_id/stats' do
+get '/surveys/:survey_id/stats' do
 
 end
 
@@ -10,7 +10,6 @@ get '/surveys/:survey_id' do
 	else
 		redirect '/'
 	end
-
 end
 
 post '/surveys/:survey_id' do
@@ -23,7 +22,7 @@ post '/surveys/:survey_id' do
 
 		QuestionResponse.create(choice_id: params[question.id].to_i, survey_response_id: survey_taken.id)
 	end
-	
+
 	redirect "/users/#{session[:user_id]}"
 end
 
