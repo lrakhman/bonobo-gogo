@@ -16,7 +16,10 @@ end
 
 post '/users/:user_id/surveys/new' do
   if session[:user_id]
-  # lots more shit
+    #puts params[:json_form]
+
+
+    redirect "/"
   else
     redirect "/"
   end
