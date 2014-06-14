@@ -1,1 +1,23 @@
-profile.erb
+<h1>Welcome <%=@user.username%>!</h1>
+
+
+<h2>Surveys Taken:</h2>
+	<ol>
+		<%@user.survey_responses.each do |survey_response|%>
+			<% id = survey_response.survey_id%>
+			<% survey = Survey.find(id)%>
+			<li><a href="/surveys/<%=survey.id%>"><%= survey.title%></a></li>
+		<%end%>
+
+	</ol>
+
+
+
+
+<h2>Surveys Created:</h2>
+
+	<ol>
+		<%Survey.all.where(survey_creator_id: session[:user_id]).each do |a_survey|%>
+		<li><%=a_survey.title%></li>
+		<%end%>
+	</ol>

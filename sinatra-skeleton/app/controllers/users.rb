@@ -9,6 +9,13 @@ get '/users/:user_id/surveys/new' do
 end
 
 get '/users/:user_id' do
+  @user = User.find(params[:user_id])
+
+  # @user.survey_responses.each do |survey_response|
+  #   @survey_response
+  # end
+
+  erb :profile
 
 end
 
