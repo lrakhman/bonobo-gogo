@@ -1,11 +1,11 @@
 get '/' do
   @surveys = Survey.all
-  erb :index
+  erb :index, layout: :login_layout
 end
 
 get '/logout' do
   session[:user_id] = nil
-  erb :index
+  erb :logout
 end
 
 post '/login' do

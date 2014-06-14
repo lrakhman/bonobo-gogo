@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link href='http://fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/css/login-page.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+
+<header>
+
+  <h1>BONOBO-GOGO</h1>
+  <h3>Fucks all day, surveys all night.</h3>
+
+
+  </header>
+
+  <div id="navbar">
+    <nav>
+  <% if session[:user_id]%>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
+      <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+
+  <% else %>
+
+  <div>
+  <form id="first" class="dark-matter" method="post" action="/login">
+    <fieldset>
+    <input id="name" name="username" type="text" placeholder="Type in your username." value="<%= @user.username if @user%>"></input>
+    <input id="password" name="password" type="password" placeholder="Type in your password." ></input>
+    <input class="button" type="submit" value="Login"></input>
+    </fieldset>
+  </form>
+
+
+  <form class="dark-matter" method="post" action="/users">
+    <fieldset>
+    <input id="name" name="username" type="text" placeholder="Please choose a username." value="<%= @user.username if @user%>"></input>
+    <input id="password" name="password" type="text" placeholder="Please choose a password." ></input>
+    <input class="button" type="submit" value="Sign-up"></input>
+    </fieldset>
+  </form>
+  </div>
+
+  <% end %>
+</nav>
+  </div>
+
+
+</body>
+</html>
