@@ -26,5 +26,10 @@ post '/surveys/:survey_id' do
 	redirect "/users/#{session[:user_id]}"
 end
 
+delete "/surveys/:survey_id" do
+	@survey = current_user.surveys.find(params[:survey_id])
+	@survey.destroy
+	status 200
+end
 
 
