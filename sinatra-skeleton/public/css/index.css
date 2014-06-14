@@ -20,7 +20,9 @@ div nav{
   padding: 1.5%;
 }
 
-
+#nav_ul{
+  text-align: right;
+}
 
 #logo{
   width:300px;

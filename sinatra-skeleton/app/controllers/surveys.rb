@@ -34,4 +34,3 @@ delete "/surveys/:survey_id" do
 	status 200
 end
 
-
