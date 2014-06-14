@@ -10,10 +10,13 @@ $(document).ready(function(){
 			success: function(response){
 				target.parent().remove();
 			}
-
 		});
 	});
+});
 
 
+<<<<<<< HEAD
 
 });
+=======
+>>>>>>> master

@@ -1,11 +1,9 @@
 
-get '/surveys/:survey_response_survey_id/stats' do
-
-
-	erb :stats
-
-
+get '/surveys/:survey_id/stats' do
+	@survey = Survey.find(params[:survey_id])
+ erb :stats
 end
+
 
 get '/surveys/:survey_id' do
 	if session[:user_id]
@@ -20,12 +18,18 @@ post '/surveys/:survey_id' do
 
 	survey_taken = SurveyResponse.create(survey_id: params[:survey_id] ,user_id: session[:user_id] )
 	survey = Survey.find(params[:survey_id])
+	#params.each
+
 	survey.questions.each do |question|
-
-		QuestionResponse.create(choice_id: params[question.id].to_i, survey_response_id: survey_taken.id)
+		QuestionResponse.create(choice_id: params[question.id.to_s].to_i, survey_response_id: survey_taken.id)
 	end
-
 	redirect "/users/#{session[:user_id]}"
+end
+
+put '/suveys/:survey_id/edit' do
+  @survey = Survey.find(params[:survey_id])
+  @survey.update_attributes(params[:survey_id])
+  redirect '/'
 end
 
 delete "/surveys/:survey_id" do

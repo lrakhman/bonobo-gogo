@@ -20,6 +20,7 @@ div nav{
   padding: 1.5%;
 }
 
+
 #nav_ul{
   text-align: right;
 }
@@ -31,9 +32,34 @@ div nav{
 
 }
 
+.graph {
+  border-bottom: 2px solid #aeaeae;
+  background-color: #eaeaea;
+}
+.bar {
+  width: 200px;
+  margin: 6px;
+  display: inline-block;
+  position: relative;
+  background-color: #aeaeae;
+  vertical-align: baseline;
+}
+.label {
+  width: 200px;
+  margin: 6px;
+  display: inline-block;
+}
+
+#key {
+  border-top: black solid 1px;
+  height: 400px;
+}
 #profile{
   border: 1px solid black;
   width:600px;
   margin: 30px auto;
 
 }
+
+
+
