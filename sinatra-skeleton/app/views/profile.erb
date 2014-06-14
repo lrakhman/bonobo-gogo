@@ -3,18 +3,52 @@
 
 <h2>Surveys Taken:</h2>
 	<ol>
+<<<<<<< HEAD
 		<%@user.survey_responses.each do |survey_response|%>
 			<li><a href="/surveys/<%=survey_response.survey.id%>/stats"><%= survey_response.survey.title%></a></li>
+=======
+			<%if @user.survey_responses.any? %>
+			<%@user.survey_responses.each do |survey_response|%>
+				<li><a href="/surveys/<%=survey_response.survey.id%>"><%= survey_response.survey.title%></a></li>
+			<%end%>
+>>>>>>> master
 		<%end%>
 
-	</ol>
 
+	</ol>
 
 
 
 <h2>Surveys Created:</h2>
+<<<<<<< HEAD
 	<ol>
 		<%Survey.all.where(survey_creator_id: session[:user_id]).each do |a_survey|%>
 			<li><%=a_survey.title%></li>
+=======
+
+	<ol class="created_surveys" >
+		<%if Survey.all.where(survey_creator_id: session[:user_id]).any? %>
+			<%Survey.all.where(survey_creator_id: session[:user_id]).each do |a_survey|%>
+			<li>
+				<%=a_survey.title%>
+				<a class="edit" href="/surveys/<%=a_survey.id%>">Edit</a>
+				<a class="delete" href="/surveys/<%=a_survey.id%>">Delete</a> 
+			</li>
+			<%end%>
+>>>>>>> master
 		<%end%>
+
 	</ol>
+
+
+<h1> Upload a profile pic! </h1>
+ <form method="post" action="/users/<%=session[:user_id]%>" enctype='multipart/form-data')>
+   <input type='file' name='uploaded_photo')>
+   <br>
+   <input type='submit' value='Upload!'>
+   <br>
+ </form>
+
+<h2> current profile pic </h2>
+
+<img style="height:auto; width:auto; max-width:200px; max-height:200px;" src="/images/<%=session[:user_id].to_s + ".jpg"%>"></img>

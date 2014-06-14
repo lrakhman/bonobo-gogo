@@ -13,3 +13,9 @@ h1 {
   margin-right: auto;
   color: white;
 }
+
+h3 a {
+  text-align: center;
+  background-color: white;
+  padding: 2%;
+}

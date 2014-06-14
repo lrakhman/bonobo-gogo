@@ -1,8 +1,12 @@
 
+<<<<<<< HEAD
 get '/surveys/:survey_response_survey_id/stats' do
 
 
 	erb :stats
+=======
+get '/surveys/:survey_id/stats' do
+>>>>>>> master
 
 end
 
@@ -13,7 +17,6 @@ get '/surveys/:survey_id' do
 	else
 		redirect '/'
 	end
-
 end
 
 post '/surveys/:survey_id' do
@@ -28,5 +31,10 @@ post '/surveys/:survey_id' do
 	redirect "/users/#{session[:user_id]}"
 end
 
+delete "/surveys/:survey_id" do
+	@survey = current_user.surveys.find(params[:survey_id])
+	@survey.destroy
+	status 200
+end
 
 

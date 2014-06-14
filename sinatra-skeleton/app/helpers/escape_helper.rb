@@ -1,9 +1,11 @@
 require 'cgi'
 
 helpers do
-  # When inserting a string into a URL, special characters must be escaped
-  # or the URL is invalid
-  #
+ 
+ 	def current_user
+    @user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  
   def escape_string(str)
     CGI.escape(str)
   end
