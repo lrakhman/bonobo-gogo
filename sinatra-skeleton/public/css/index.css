@@ -20,12 +20,9 @@ div nav{
   padding: 1.5%;
 }
 
-ul {
-  /*text-align: right;*/
 
-}
 
-h1{
+#logo{
   width:300px;
   margin-top: 6px;
   color: white  ;
@@ -52,5 +49,11 @@ h1{
 
 #key {
   border-top: black solid 1px;
-  height: 400px
+  height: 400px;
+}
+#profile{
+  border: 1px solid black;
+  width:600px;
+  margin: 30px auto;
+
 }

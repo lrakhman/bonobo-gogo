@@ -15,6 +15,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/js/application.js"></script>
+    <script src="/js/edit_or_delete_survey.js"></script>
 
     <title></title>
   </head>
@@ -22,7 +23,7 @@
     <% if session[:user_id]%>
       <div id="nav">
         <nav>
-          <h1>Bonobo-GoGo</h1>
+          <h1 id="logo">Bonobo-GoGo</h1>
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>

@@ -9,7 +9,7 @@ end
 
 get '/logout' do
   session[:user_id] = nil
-  erb :logout
+  erb :index, layout: :login_layout
 end
 
 post '/login' do
