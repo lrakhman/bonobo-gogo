@@ -21,13 +21,20 @@ div nav{
 }
 
 ul {
-  /*text-align: right;*/
+  text-align: right;
 
 }
 
-h1{
+#logo{
   width:300px;
   margin-top: 6px;
   color: white  ;
+
+}
+
+#profile{
+  border: 1px solid black;
+  width:600px;
+  margin: 30px auto;
 
 }
