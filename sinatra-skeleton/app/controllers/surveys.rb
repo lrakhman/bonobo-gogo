@@ -26,14 +26,8 @@ post '/surveys/:survey_id' do
 	redirect "/users/#{session[:user_id]}"
 end
 
-put '/suveys/:survey_id/edit' do
-  @survey = Survey.find(params[:survey_id])
-  @survey.update_attributes(params[:survey_id])
-  redirect '/'
-end
-
 delete "/surveys/:survey_id" do
-	@survey = current_user.surveys.find(params[:survey_id])
+	@survey = Survey.find(params[:survey_id])
 	@survey.destroy
 	status 200
 end
