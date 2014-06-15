@@ -22,7 +22,9 @@
 			<%Survey.all.where(survey_creator_id: session[:user_id]).each do |a_survey|%>
 			<li>
 				<%=a_survey.title%>
-				<a class="delete" style="border: solid black 1px; padding: 2px;" href="/surveys/<%=a_survey.id%>">delete</a>
+
+				<a class="delete" href="/surveys/<%=a_survey.id%>/stats">stats</a>
+				<a class="delete" href="/surveys/<%=a_survey.id%>">delete</a>
 			</li> 
 			<%end%>
 
