@@ -1,9 +1,9 @@
 
 <div id="profile">
-<h1>Welcome, <%=@user.username.upcase%>!</h1>
-<img style="height:auto; width:auto; max-width:200px; max-height:200px;" src="/images/<%=session[:user_id].to_s + ".jpg"%>"></img>
+<h1 id="welcome">Welcome, <%=@user.username.upcase%>!</h1>
+<img id="photo" style="height:auto; width:auto; max-width:200px; max-height:200px;" src="/images/<%=session[:user_id].to_s + ".jpg"%>"></img>
 
-
+<div id="text">
 <h2>Surveys Taken:</h2>
 	<ol>
 
@@ -32,6 +32,8 @@
 	</ol>
 
 
+
+
 <h2> Upload a profile pic! </h2>
  <form method="post" action="/users/<%=session[:user_id]%>" enctype='multipart/form-data')>
    <input type='file' name='uploaded_photo')>
@@ -39,5 +41,7 @@
    <input type='submit' value='Upload!'>
    <br>
  </form>
+
+</div>
 
 </div>
