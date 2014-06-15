@@ -76,9 +76,14 @@ nav li a {
 
 
 #a_survey{
-  margin: 130px auto;
-  width:600px;
-  text-align: center;
+  margin: 100px auto auto 50px;
+
+ 
+}
+
+.delete:hover{
+  color:purple;
+  list-style: italic;
 }
 
 #photo {
