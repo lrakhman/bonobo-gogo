@@ -20,19 +20,33 @@
     <title></title>
   </head>
   <body>
-    <% if session[:user_id]%>
-      <div id="nav">
-        <nav>
-          <h1 id="logo">Bonobo-GoGo</h1>
-            <ul id="nav_ul">
-              <li><a href="/">Home</a></li>
-              <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
-              <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
-              <li><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
-      </div>
-    <%end%>
-      <%= yield %>
+    <header>
+      <% if session[:user_id]%>
+          <span class="logo"><a id="bobo" href="/">Bonobo-GoGo</a></span>
+            <nav>
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/users/<%=session[:user_id]%>/surveys/new">Create Survey</a></li>
+                  <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+      <%end%>
+    <%= yield %>
+    </header>
   </body>
 </html>
+
+
+
+
+
+
+<!--  <span class="brand"><a id="hip" href="/">HipSTIRR</a></span>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav> -->

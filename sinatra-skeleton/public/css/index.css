@@ -2,34 +2,34 @@ body {
   background-color: #e5e5e5;
 }
 
-
-nav li {
-  display: inline-block;
-  padding-right: 1%;
-  /*text-align: right;*/
+nav{
+  float: right;
 }
 
-nav li a {
-  text-decoration: none;
-  color: white;
+nav li{
+  display: inline;
+  padding-right: 9px;
 
 }
 
-div nav{
+
+header{
   background-color: #333;
+  height: 60px;
   padding: 1.5%;
 }
 
 
-#nav_ul{
-  text-align: right;
+nav li a {
+  text-decoration: none;
+  color: white;
 }
 
-#logo{
-  width:300px;
-  margin-top: 6px;
-  color: white  ;
-
+.logo a{
+  font-family: "Lato", Verdana, sans-serif;
+  font-size: 3em;
+  color: white;
+  text-decoration: none;
 }
 
 .graph {
@@ -57,12 +57,13 @@ div nav{
 #profile{
   border: 1px solid black;
   width:600px;
-  margin: 30px auto;
+  margin: 50px auto;
+  padding-bottom: 15px;
 
 }
 
 #survey {
-  margin: 30px auto;
+  margin: 15px auto;
   border: 1px solid black;
   width:600px;
   padding:20px;
@@ -74,8 +75,8 @@ div nav{
 }
 
 
-#new_survey{
-  margin: 50px auto;
+#a_survey{
+  margin: 130px auto;
   width:600px;
   text-align: center;
 }
@@ -87,13 +88,22 @@ margin-left: 30px;
 #text{
   margin-left: 30px;
 }
+
+#main_page{
+  margin-top: 50px;
+}
 a{
   text-decoration: none;
   color: black;
 }
 a:hover{
   font-style: italic;
-  font-size: 30px;
+  color: yellow;
 }
 
+#survey_page{
+  margin: 30px auto;
+  border: 1px solid black;
+  width:600px;
+  padding:20px;
 
