@@ -27,7 +27,7 @@ post '/surveys/:survey_id' do
 end
 
 delete "/surveys/:survey_id" do
-	@survey = current_user.find(params[:survey_id])
+	@survey = current_user.surveys.find(params[:survey_id])
 	@survey.destroy
 	status 200
 end
