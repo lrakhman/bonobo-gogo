@@ -18,7 +18,7 @@ post '/surveys/:survey_id' do
 
 	survey_taken = SurveyResponse.create(survey_id: params[:survey_id] ,user_id: session[:user_id] )
 	survey = Survey.find(params[:survey_id])
-	#params.each
+	
 
 	survey.questions.each do |question|
 		QuestionResponse.create(choice_id: params[question.id.to_s].to_i, survey_response_id: survey_taken.id)
